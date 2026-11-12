@@ -1,7 +1,15 @@
 import { useEffect, useRef } from 'react'
+import { Cpu, WifiOff, Zap } from 'lucide-react'
 import Reveal from './Reveal.jsx'
 import Wave from './Wave.jsx'
 import BusLoop from './BusLoop.jsx'
+
+// Por que funciona de forma definitiva: tudo é processado no próprio ônibus (edge computing)
+const EDGE = [
+  { icon: Cpu, title: 'Processamento a bordo', text: 'O algoritmo roda no próprio veículo, por edge computing.' },
+  { icon: WifiOff, title: 'Funciona offline', text: 'A tela continua precisa mesmo sem conexão com a internet.' },
+  { icon: Zap, title: 'Tempo real', text: 'A contagem é atualizada a cada embarque e desembarque.' },
+]
 
 const WHITE = [255, 255, 255]
 const NIGHT = [0, 22, 63] // #00163f, o mesmo tom do topo do céu do CTA
@@ -50,14 +58,30 @@ export default function Impact() {
           </Reveal>
           <Reveal delay={150}>
             <p className="border-l-4 border-accent-400 pl-5 text-xl leading-relaxed text-pretty text-slate-600">
-              Todos os dias, quem depende do ônibus embarca sem saber se vai viajar sentado.{' '}
-              <strong className="font-bold text-navy-900">O SentaAí acaba com essa incerteza.</strong>
+              Todos os dias, quem depende do ônibus embarca sem saber se vai encontrar um assento. O SentaAí resolve isso
+              dentro do próprio veículo:{' '}
+              <strong className="font-bold text-navy-900">informação certa, no momento do embarque.</strong>
             </p>
           </Reveal>
         </div>
 
         <Reveal variant="fade" delay={150}>
           <BusLoop className="mt-10" />
+        </Reveal>
+
+        {/* Diferenciais técnicos em uma linha discreta */}
+        <Reveal variant="fade" delay={200}>
+          <ul className="mt-8 grid gap-6 border-t border-navy-900/10 pt-8 sm:grid-cols-3">
+            {EDGE.map(({ icon: Icon, title, text }) => (
+              <li key={title} className="flex items-start gap-3">
+                <Icon className="mt-0.5 h-5 w-5 shrink-0 text-accent-500" />
+                <p className="text-sm leading-relaxed text-slate-600">
+                  <strong className="block text-base font-bold text-navy-900">{title}</strong>
+                  {text}
+                </p>
+              </li>
+            ))}
+          </ul>
         </Reveal>
       </div>
 

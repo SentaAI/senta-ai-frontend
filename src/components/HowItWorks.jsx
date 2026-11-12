@@ -38,8 +38,8 @@ export default function HowItWorks() {
             Como <span className="text-accent-400">funciona</span>
           </h2>
           <p className="mt-5 max-w-md text-lg text-[var(--page-muted)]">
-            Um sistema IoT que combina sensores nas portas com o monitoramento do movimento das catracas, instalado no
-            ônibus que já está em operação.
+            Sensores IoT nas portas e na catraca registram cada embarque e desembarque. Um algoritmo embarcado consolida a
+            contagem, aplica a margem de erro e atualiza a tela em tempo real.
           </p>
 
           <ol className="mt-10 space-y-3" onMouseLeave={() => setHover(null)}>

@@ -3,9 +3,27 @@ import BusSide from './BusSide.jsx'
 
 // Peças do SentaAí no ônibus visto de lado (frente à esquerda), numeradas da esquerda para a direita.
 export const PARTS = [
-  { x: 210, y: 128, icon: RefreshCw, title: 'Monitoramento da catraca', text: 'Um sensor acompanha o giro da catraca e registra cada embarque.' },
-  { x: 360, y: 74, icon: Monitor, title: 'Tela a bordo', text: 'Recebe os dados em tempo real e mostra a lotação do veículo.' },
-  { x: 535, y: 50, icon: DoorOpen, title: 'Sensores nas portas', text: 'Registram as saídas e o embarque de cadeirantes.' },
+  {
+    x: 210,
+    y: 128,
+    icon: RefreshCw,
+    title: 'Monitoramento da catraca',
+    text: 'Um sensor de giro registra cada embarque no instante em que acontece, passageiro a passageiro.',
+  },
+  {
+    x: 360,
+    y: 74,
+    icon: Monitor,
+    title: 'Tela a bordo',
+    text: 'Exibe a lotação calculada pelo algoritmo embarcado, com margem de segurança para nunca anunciar um assento que não existe.',
+  },
+  {
+    x: 535,
+    y: 50,
+    icon: DoorOpen,
+    title: 'Sensores nas portas',
+    text: 'Detectam cada desembarque e o embarque de cadeirantes, mantendo a contagem correta do início ao fim da viagem.',
+  },
 ]
 
 // highlight: peça sob o mouse; selected: peça marcada por clique. As duas ficam em destaque

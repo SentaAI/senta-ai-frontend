@@ -5,31 +5,31 @@ const PROFILES = [
   {
     icon: UserRound,
     who: 'Passageiro',
-    headline: 'Sabe se vai sentar antes de procurar lugar.',
+    headline: 'Informação confiável no momento do embarque.',
     points: [
-      'Lotação visível logo após a catraca',
-      'Não depende de celular nem de internet',
-      'Informação clara para quem precisa de assento',
+      'Lotação exibida logo após a catraca',
+      'Sem aplicativo, cadastro ou conexão com a internet',
+      'Previsibilidade para quem precisa viajar sentado',
     ],
   },
   {
     icon: BusFront,
     who: 'Empresa de ônibus',
-    headline: 'Instalação simples na frota que já está em operação.',
+    headline: 'Baixo custo de implantação na frota que já está em operação.',
     points: [
-      'Sensores de baixo custo nas portas e na catraca',
+      'Sensores IoT de baixo custo nas portas e na catraca',
       'Sem obras e sem troca de veículos',
-      'Passageiros mais bem distribuídos no salão',
+      'Contagem precisa, com margem de erro controlada',
     ],
   },
   {
     icon: Building2,
     who: 'Prefeitura',
-    headline: 'Mais conforto e dignidade no transporte da cidade.',
+    headline: 'Dados confiáveis para um transporte mais eficiente e humano.',
     points: [
-      'Tecnologia viável para a frota inteira',
-      'Transparência sobre a lotação dos veículos',
-      'Benefício direto para quem usa o ônibus todos os dias',
+      'Tecnologia viável para toda a frota municipal',
+      'Lotação medida por sensores, não por estimativas',
+      'Mais conforto e dignidade para o cidadão',
     ],
   },
 ]
@@ -43,7 +43,7 @@ export default function Audiences() {
             Para quem é
           </p>
           <h2 className="mt-6 text-4xl leading-[1.08] font-extrabold tracking-tight text-balance text-[var(--page-fg)] sm:text-5xl">
-            Feito para quem usa, opera e <span className="text-accent-400">administra o transporte.</span>
+            Valor para quem usa, opera e <span className="text-accent-400">administra o transporte.</span>
           </h2>
         </Reveal>
 

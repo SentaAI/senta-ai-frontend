@@ -22,11 +22,14 @@ export default function FinalCTA() {
         </Reveal>
         <Reveal delay={120}>
           <h2 className="mt-10 text-5xl leading-[1.02] font-extrabold tracking-tight text-balance text-white sm:text-7xl">
-            Leve o SentaAí para a <span className="text-accent-400">sua frota.</span>
+            Transforme a experiência a bordo da <span className="text-accent-400">sua frota.</span>
           </h2>
         </Reveal>
         <Reveal delay={240}>
-          <p className="mt-6 text-lg text-slate-300 sm:text-xl">Instalação simples, no ônibus que já roda.</p>
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-pretty text-slate-300 sm:text-xl">
+            Tecnologia IoT de baixo custo, instalada nos veículos que já circulam. Agende uma demonstração com a nossa
+            equipe.
+          </p>
         </Reveal>
         <Reveal delay={360} className="mt-12 flex flex-col justify-center gap-3 sm:flex-row">
           <CtaButton size="lg" href="#contato" />
