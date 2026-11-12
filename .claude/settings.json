@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(node -e \"const l=require\\('lucide-react'\\); const want=['Accessibility','AlertTriangle','TriangleAlert','BatteryFull','CheckCircle2','CircleCheck','ChevronLeft','DoorOpen','MapPin','RefreshCw','Signal','Thermometer','Users','Wifi','Menu','X','ArrowRight','MapPinned','Clock','HeartHandshake','Cpu','Armchair','Building2','Bus','BusFront','Mail','Phone','Smartphone','Radio','Cloud','ShieldCheck','Search','Hourglass','Flame','Check','Gauge','EyeOff','Wrench','CircleDollarSign','Route','Navigation','Sparkles','ArrowDown','ChevronRight','Server','Instagram','Linkedin']; console.log\\(want.map\\(n=>n+':'+\\(n in l\\)\\).join\\('  '\\)\\)\")",
+      "PowerShell(Remove-Item \"src\\\\hooks\\\\useSoftSnap.js\" -Confirm:$false)",
+      "PowerShell(npx vite preview --port 4173 --strictPort)"
+    ]
+  }
+}
