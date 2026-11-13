@@ -1,21 +1,23 @@
 import { DoorOpen, Monitor, RefreshCw } from 'lucide-react'
 import BusSide from './BusSide.jsx'
 
-// Peças do SentaAí no ônibus visto de lado (frente à esquerda), numeradas da esquerda para a direita.
+// Peças do SentaAí no ônibus visto de lado (frente à esquerda).
+// 1 = tela (vai ficar do lado de fora, junto à porta da frente: marcador embaixo da primeira
+// janela), 2 = catraca, 3 = sensores nas portas.
 export const PARTS = [
+  {
+    x: 72,
+    y: 192,
+    icon: Monitor,
+    title: 'Tela a bordo',
+    text: 'Exibe a lotação calculada pelo algoritmo embarcado, com margem de segurança para nunca anunciar um assento que não existe.',
+  },
   {
     x: 210,
     y: 128,
     icon: RefreshCw,
     title: 'Monitoramento da catraca',
     text: 'Um sensor de giro registra cada embarque no instante em que acontece, passageiro a passageiro.',
-  },
-  {
-    x: 360,
-    y: 74,
-    icon: Monitor,
-    title: 'Tela a bordo',
-    text: 'Exibe a lotação calculada pelo algoritmo embarcado, com margem de segurança para nunca anunciar um assento que não existe.',
   },
   {
     x: 535,
