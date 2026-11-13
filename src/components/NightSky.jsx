@@ -1,7 +1,8 @@
 // Céu noturno de cidade: azul profundo no alto, clareando no horizonte, com o brilho
 // laranja das luzes da cidade e uma granulação leve (evita o aspecto de degradê "de computador").
 // horizon: distância (px) do horizonte até a base da seção, onde o brilho é mais forte.
-export function NightSky({ className = '', horizon = 0 }) {
+// fadeTop: a granulação surge aos poucos a partir do topo, para emendar com uma cor lisa acima (ex.: onda).
+export function NightSky({ className = '', horizon = 0, fadeTop = false }) {
   return (
     <div className={`absolute inset-0 -z-10 overflow-hidden ${className}`} aria-hidden="true">
       <div className="absolute inset-0 bg-[linear-gradient(180deg,#00163f_0%,#001a4d_40%,#00215e_72%,#0b2c6e_100%)]" />
@@ -9,7 +10,11 @@ export function NightSky({ className = '', horizon = 0 }) {
         className="absolute inset-x-0 h-[70%] bg-[radial-gradient(ellipse_85%_50%_at_50%_100%,rgb(249_130_7/0.45),rgb(249_130_7/0.14)_45%,transparent_75%)]"
         style={{ bottom: horizon }}
       />
-      <div className="bg-noise absolute inset-0 opacity-[0.05]" />
+      <div
+        className={`bg-noise absolute inset-0 opacity-[0.05] ${
+          fadeTop ? '[mask-image:linear-gradient(to_bottom,transparent,black_16rem)]' : ''
+        }`}
+      />
     </div>
   )
 }

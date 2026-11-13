@@ -9,7 +9,7 @@ export const NAV_LINKS = [
   { href: '#impacto', label: 'Impacto' },
 ]
 
-export function CtaButton({ className = '', size = 'md', href = '#adotar' }) {
+export function CtaButton({ className = '', size = 'md', href = '#adotar', children = 'Solicitar demonstração' }) {
   const sizing = size === 'lg' ? 'px-7 py-3.5 text-base' : 'px-5 py-2.5 text-sm'
   return (
     <a
@@ -17,7 +17,7 @@ export function CtaButton({ className = '', size = 'md', href = '#adotar' }) {
       className={`group inline-flex items-center justify-center gap-2 rounded-full bg-accent-400 font-bold whitespace-nowrap text-navy-950 shadow-[0_10px_30px_-8px_rgb(249_130_7/0.7)] transition hover:-translate-y-0.5 hover:bg-accent-300 hover:shadow-[0_14px_36px_-8px_rgb(249_130_7/0.85)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-300 ${sizing} ${className}`}
     >
       <CalendarCheck className={`transition group-hover:rotate-[-8deg] ${size === 'lg' ? 'h-5 w-5' : 'h-4 w-4'}`} />
-      Solicitar demonstração
+      {children}
     </a>
   )
 }

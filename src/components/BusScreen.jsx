@@ -59,24 +59,24 @@ export default function BusScreen({ state: s }) {
     <div className="w-full rounded-[1.6rem] border border-white/15 bg-gradient-to-b from-navy-600 to-navy-800 p-2 shadow-[0_30px_80px_-20px_rgb(0_11_34/0.85)] sm:p-2.5">
       <div className="overflow-hidden rounded-[1.15rem] bg-navy-950 ring-1 ring-white/5">
         {/* Estado em destaque */}
-        <div className={`flex items-center gap-3 px-5 py-4 transition-colors duration-500 sm:px-6 ${st.bg} ${st.fg}`} aria-live="polite">
-          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-black/10">
+        <div className={`flex items-center gap-3 px-4 py-3 transition-colors duration-500 sm:px-6 sm:py-4 ${st.bg} ${st.fg}`} aria-live="polite">
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-black/10 sm:h-10 sm:w-10">
             <Icon className="h-5 w-5" />
           </span>
-          <p className="text-lg leading-tight font-extrabold sm:text-xl">{st.label}</p>
+          <p className="text-base leading-tight font-extrabold sm:text-xl">{st.label}</p>
           <span className="ml-auto hidden items-center gap-1.5 text-[11px] font-bold tracking-wider whitespace-nowrap uppercase opacity-80 sm:flex">
             <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-current" />
             Ao vivo
           </span>
         </div>
 
-        <div className="px-5 pt-6 pb-6 sm:px-8 sm:pt-7 sm:pb-7">
+        <div className="px-4 pt-5 pb-5 sm:px-8 sm:pt-7 sm:pb-7">
           {/* Número de pessoas */}
           <div className="flex flex-wrap items-end justify-between gap-x-4 gap-y-3">
             <div className="flex items-end gap-3 text-white">
               <span
                 key={s.onboard}
-                className="inline-block origin-left animate-pop text-6xl leading-none font-black tabular-nums sm:text-7xl"
+                className="inline-block origin-left animate-pop text-5xl leading-none font-black tabular-nums sm:text-7xl"
               >
                 {s.onboard}
               </span>
@@ -89,13 +89,13 @@ export default function BusScreen({ state: s }) {
           </div>
 
           {/* Bancos */}
-          <div className="mt-8 flex justify-center">
+          <div className="mt-6 flex justify-center sm:mt-8">
             <SeatMap onboard={s.onboard} />
           </div>
-          <SeatLegend className="mt-5" />
+          <SeatLegend className="mt-4 sm:mt-5" />
 
           {/* Medidor de lotação */}
-          <div className="mt-6 border-t border-white/8 pt-5">
+          <div className="mt-5 border-t border-white/8 pt-4 sm:mt-6 sm:pt-5">
             <Gauge onboard={s.onboard} />
           </div>
         </div>

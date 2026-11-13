@@ -28,11 +28,20 @@ export const PARTS = [
 
 // highlight: peça sob o mouse; selected: peça marcada por clique. As duas ficam em destaque
 // (um pouco maiores, com halo discreto). onHover avisa o hover; onSelect avisa o clique.
-export default function BusSideDiagram({ highlight = null, selected = null, onHover = () => {}, onSelect = () => {} }) {
+export default function BusSideDiagram({
+  highlight = null,
+  selected = null,
+  onHover = () => {},
+  onSelect = () => {},
+  large = false, // marcadores maiores para telas pequenas, onde o desenho fica reduzido
+  className = '',
+}) {
+  const r = large ? 40 : 24
+  const font = large ? 36 : 22
   return (
     <svg
       viewBox="0 0 1000 300"
-      className="w-full overflow-visible"
+      className={`w-full overflow-visible ${className}`}
       role="img"
       aria-label="Ônibus visto de lado com a posição do sensor da catraca, da tela e dos sensores das portas"
     >
@@ -53,7 +62,7 @@ export default function BusSideDiagram({ highlight = null, selected = null, onHo
             <circle
               cx={p.x}
               cy={p.y}
-              r="31"
+              r={r + 7}
               className="fill-accent-400 transition-opacity duration-500 ease-out"
               style={{ opacity: active ? 0.15 : 0 }}
             />
@@ -64,12 +73,12 @@ export default function BusSideDiagram({ highlight = null, selected = null, onHo
               <circle
                 cx={p.x}
                 cy={p.y}
-                r="24"
+                r={r}
                 className={`transition-colors duration-500 ease-out ${active ? 'fill-accent-600' : 'fill-accent-400'}`}
                 stroke="white"
-                strokeWidth="4"
+                strokeWidth={large ? 6 : 4}
               />
-              <text x={p.x} y={p.y + 7.5} textAnchor="middle" fontSize="22" fontWeight="800" className="pointer-events-none fill-navy-950">
+              <text x={p.x} y={p.y + font * 0.34} textAnchor="middle" fontSize={font} fontWeight="800" className="pointer-events-none fill-navy-950">
                 {i + 1}
               </text>
             </g>

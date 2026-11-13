@@ -56,7 +56,7 @@ export default function Hero() {
       <NightSky horizon={116} />
 
       {/* Conteúdo centralizado no espaço entre o cabeçalho e a rua */}
-      <div className="relative z-10 mx-auto grid w-full max-w-7xl flex-1 content-center items-center gap-14 px-4 pt-12 pb-72 sm:px-6 sm:pt-16 lg:px-8 xl:grid-cols-2 xl:gap-12 xl:pt-8 xl:pb-48">
+      <div className="relative z-10 mx-auto grid w-full max-w-7xl flex-1 content-center items-center gap-10 px-4 pt-16 pb-72 sm:gap-14 sm:px-6 sm:pt-16 lg:px-8 xl:grid-cols-2 xl:gap-12 xl:pt-8 xl:pb-48">
         <div className="max-w-xl">
           <Reveal>
             <h1 className="text-4xl leading-[1.05] font-extrabold tracking-tight text-balance text-white sm:text-5xl xl:text-[3.25rem]">
@@ -66,13 +66,14 @@ export default function Hero() {
           </Reveal>
 
           <Reveal delay={240}>
-            <p className="mt-6 text-lg leading-relaxed text-pretty text-slate-200">
+            <p className="mt-5 text-base leading-relaxed text-pretty text-slate-200 sm:mt-6 sm:text-lg">
               O SentaAí é um sistema IoT que exibe, em uma tela instalada no interior do veículo, o número de passageiros
               a bordo e a disponibilidade de assentos em tempo real.
             </p>
           </Reveal>
 
-          <Reveal delay={360} className="mt-9 flex flex-col gap-3 sm:flex-row">
+          {/* Botões só a partir do tablet; no celular o texto leva direto à tela */}
+          <Reveal delay={360} className="mt-9 hidden gap-3 sm:flex sm:flex-row">
             <CtaButton size="lg" />
             <a
               href="#como-funciona"
